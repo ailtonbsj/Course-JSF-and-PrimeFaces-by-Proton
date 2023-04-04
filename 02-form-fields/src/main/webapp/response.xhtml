@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Response</title>
+    </h:head>
+    <h:body>
+        <h2>Hello #{register.name}!</h2>
+        <table>
+            <tr>
+                <td>Password:</td>
+                <td><h:outputText value="#{register.password}">Password</h:outputText></td>
+            </tr>
+            <tr>
+                <td>E-mail:</td>
+                <td><h:outputText value="#{register.email}">E-mail</h:outputText></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td><h:outputText value="#{register.gender}">Gender</h:outputText></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><h:outputText value="#{register.address}">Address</h:outputText></td>
+            </tr>
+        </table>
+    </h:body>
+</html>
