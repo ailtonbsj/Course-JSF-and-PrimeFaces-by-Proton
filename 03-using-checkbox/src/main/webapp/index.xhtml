@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Passing parameters</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h3>Multiple checkboxes</h3>
+            
+            <h:selectManyCheckbox value="#{checkbox.data}">
+                <f:selectItem itemValue="Maçã" itemLabel="Maçã" />
+                <f:selectItem itemValue="Banana" itemLabel="Banana" />
+                <f:selectItem itemValue="Limão" itemLabel="Limão" />
+                <f:selectItem itemValue="Uva" itemLabel="Uva" />
+            </h:selectManyCheckbox>
+
+            <h:commandButton id="submit-button" value="Submit" action="response.xhtml"/>
+        </h:form>
+    </h:body>
+</html>
