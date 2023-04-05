@@ -30,4 +30,24 @@ sudo apt install ./apache-netbeans_17-1_all.deb
 # Extract package
 tar -zxf apache-tomcat-9.0.73.tar.gz -C ~/.apps
 
+# Installed MySQL Server and open shell
+sudo mysql -u root -p
+```
+
+### MySQL Shell commands used
+
+```sql
+create database students;
+
+use students;
+
+CREATE TABLE student_record (
+student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+student_name VARCHAR(100), 
+student_email VARCHAR(50), 
+student_password VARCHAR(20), 
+student_gender VARCHAR(1), 
+student_address VARCHAR(100));
+
+show tables;
 ```
