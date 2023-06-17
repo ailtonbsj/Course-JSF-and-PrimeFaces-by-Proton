@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Boolean Checkbox</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            <p:growl id="checkMsg" showDetail="true" sticky="false" />
+            
+            <h2>Boolean Checkbox</h2>
+            <h:panelGrid columns="2" style="margin-bottom: 10px;" cellpadding="5">
+                <h:outputText value="Click Checkbox: " />
+                <p:selectBooleanCheckbox value="#{booleanCheckBox.value}">
+                    <p:ajax update="checkMsg" listener="#{booleanCheckBox.addMessage}" />
+                </p:selectBooleanCheckbox>
+            </h:panelGrid>
+            
+            <hr />
+            
+            <h2>Spinner</h2>
+            <h:panelGrid columns="2" styleClass="ui-grid" cellpadding="5">
+                <h:outputLabel value="Spinner: " />
+                <p:spinner value="#{spinner.value}" widgetVar="spin">
+                    <p:ajax update="checkMsg" listener="#{spinner.addMessage}" />
+                </p:spinner>
+            </h:panelGrid>
+            
+            <hr />
+            
+            <h2>File upload</h2>
+            <p:fileUpload fileUploadListener="#{fileUpload.handleFileUpload}" mode="advanced" dragDropSupport="false"
+                update="checkMsg" sizeLimit="100000" fileLimit="1" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+            
+            <hr />
+            
+            <h2>InputText Slider</h2>
+            <h:panelGrid columns="1" style="margin-bottom: 10px">  
+                <p:inputText id="user-name" />  
+                <p:slider for="user-name" />  
+            </h:panelGrid>
+            
+            <hr />
+            
+            <h2>PieChart</h2>
+            <p:chart type="pie" model="#{pieChart.pieModel}" style="width:400px;height:300px" />
+            
+            <hr />
+            <h2>Login</h2>
+            <p:panel header="User Login">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <p:outputLabel for="username" value="User Name: " />
+                    <p:inputText id="username" value="#{login.username}" required="true" />
+                </h:panelGrid>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <p:outputLabel for="password" value="Password: " />
+                    <p:password id="password" value="#{login.password}" required="true" />
+                </h:panelGrid>
+                <p:commandButton value="login" actionListener="#{login.displayMessage}" update="checkMsg" ajax="false" />
+            </p:panel>
+
+        </h:form>
+    </h:body>
+</html>
